@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>하연 성장 대시보드</title>
+  <style>
+    :root{--bg:#fff8ef;--card:#fff;--ink:#2a2118;--muted:#7a6a5a;--pink:#ff8fb3;--blue:#5aa7ff;--line:rgba(42,33,24,.10);--shadow:0 18px 50px rgba(64,42,22,.12)}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",sans-serif;background:radial-gradient(circle at 10% 0%,#ffe3ef 0,transparent 28%),radial-gradient(circle at 90% 10%,#dff4ff 0,transparent 25%),var(--bg);color:var(--ink)}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 48px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.card{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+    .title{padding:34px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border-radius:99px;background:#fff0f6;color:#c74373;font-weight:800;font-size:14px}.dot{width:10px;height:10px;border-radius:50%;background:var(--pink)}
+    h1{font-size:clamp(38px,7vw,76px);line-height:1.02;margin:18px 0 10px;letter-spacing:-.06em}.sub{font-size:20px;line-height:1.55;color:var(--muted);font-weight:650}.latest{padding:26px;display:flex;flex-direction:column;justify-content:space-between}.label{font-size:14px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.big{font-size:44px;font-weight:950;letter-spacing:-.05em;margin-top:8px}.unit{font-size:20px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.metric{padding:22px}.metric strong{display:block;font-size:32px;letter-spacing:-.04em}.metric span{color:var(--muted);font-weight:700}.section{margin-top:22px;padding:26px}.section h2{margin:0 0 16px;font-size:28px;letter-spacing:-.04em}.chartBox{height:360px}.timeline{display:grid;gap:12px}.row{display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.pill{display:inline-flex;padding:7px 10px;border-radius:99px;background:#f3f7ff;color:#3b67b2;font-size:13px;font-weight:850}.note{color:var(--muted);line-height:1.55}.analysis{display:grid;grid-template-columns:1fr 1fr;gap:16px}.box{padding:20px;border-radius:22px;background:#fff;border:1px solid var(--line)}.box h3{margin:0 0 8px;font-size:20px}.box p{margin:0;color:var(--muted);line-height:1.62;font-weight:600}.footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}.empty{padding:18px;border-radius:18px;background:#fff7e8;color:#8a5a18;font-weight:700}.legend{display:flex;gap:14px;align-items:center;margin-bottom:8px;color:var(--muted);font-weight:800}.sw{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:5px}.svgtext{font:700 12px -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;fill:#7a6a5a}
+    @media(max-width:800px){.hero,.grid,.analysis{grid-template-columns:1fr}.row{grid-template-columns:1fr}.chartBox{height:320px}.title{padding:26px}.latest{gap:18px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="card title"><div class="eyebrow"><span class="dot"></span><span>Growth Dashboard</span></div><h1><span id="childName">하연</span> 성장 기록</h1><p class="sub">키·몸무게를 Telegram으로 보내면 데이터에 추가하고, GitHub Pages 대시보드에 반영하는 성장 기록 보드.</p></div>
+      <div class="card latest"><div><div class="label">Latest Check</div><div class="big" id="latestDate">-</div></div><div class="grid" style="grid-template-columns:1fr 1fr;margin-top:0"><div><div class="label">Height</div><div class="big"><span id="latestHeight">-</span><span class="unit"> cm</span></div></div><div><div class="label">Weight</div><div class="big"><span id="latestWeight">-</span><span class="unit"> kg</span></div></div></div></div>
+    </section>
+    <section class="grid"><div class="card metric"><span>기록 수</span><strong id="count">-</strong></div><div class="card metric"><span>키 변화</span><strong id="heightDelta">-</strong></div><div class="card metric"><span>몸무게 변화</span><strong id="weightDelta">-</strong></div></section>
+    <section class="card section"><h2>성장 추이</h2><div class="legend"><span><i class="sw" style="background:var(--pink)"></i>키(cm)</span><span><i class="sw" style="background:var(--blue)"></i>몸무게(kg)</span></div><div class="chartBox"><svg id="growthChart" width="100%" height="100%" role="img" aria-label="키와 몸무게 성장 추이"></svg></div></section>
+    <section class="analysis" style="margin-top:22px"><div class="card section" style="margin-top:0"><h2>AI 분석 메모</h2><div id="analysisNotes" class="timeline"></div></div><div class="card section" style="margin-top:0"><h2>진단 자료</h2><div id="reports" class="timeline"></div></div></section>
+    <section class="card section"><h2>측정 기록</h2><div id="timeline" class="timeline"></div></section>
+    <div class="footer">Public-safe dashboard · no birthdate or private identifiers · rendered from data.json</div>
+  </main>
+<script>
+const fmt=n=>Number.isFinite(Number(n))?(Math.round(Number(n)*10)/10).toFixed(1):'-';
+const shortDate=d=>d?String(d).replaceAll('-','.').slice(0,10):'-';
+const el=(tag,cls,text)=>{const x=document.createElement(tag); if(cls)x.className=cls; if(text!==undefined)x.textContent=text; return x;};
+function deltaText(arr,key,unit){if(arr.length<2)return'기록 대기';const diff=Number(arr.at(-1)[key])-Number(arr[0][key]);return`${diff>0?'+':''}${fmt(diff)}${unit}`;}
+function addEmpty(parent,text){parent.appendChild(el('div','empty',text));}
+function addBox(parent,title,body,date){const b=el('div','box');b.appendChild(el('h3','',title||'메모'));b.appendChild(el('p','',body||''));const d=el('div','note',shortDate(date));d.style.marginTop='10px';b.appendChild(d);parent.appendChild(b);}
+function drawChart(rows){const svg=document.getElementById('growthChart');while(svg.firstChild)svg.removeChild(svg.firstChild);const W=900,H=330,pad={l:48,r:48,t:22,b:42};svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const ns='http://www.w3.org/2000/svg';const make=(name,attrs)=>{const n=document.createElementNS(ns,name);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);svg.appendChild(n);return n;};
+ if(!rows.length){make('text',{x:W/2,y:H/2,'text-anchor':'middle',class:'svgtext'}).textContent='기록을 기다리는 중';return;}
+ const xs=rows.map((_,i)=>pad.l+(rows.length===1?(W-pad.l-pad.r)/2:i*(W-pad.l-pad.r)/(rows.length-1||1)));const hVals=rows.map(r=>Number(r.heightCm)), wVals=rows.map(r=>Number(r.weightKg));
+ const scale=(vals)=>{let min=Math.min(...vals),max=Math.max(...vals);if(min===max){min-=1;max+=1;}return v=>pad.t+(max-v)*(H-pad.t-pad.b)/(max-min);};const hy=scale(hVals), wy=scale(wVals);
+ for(let i=0;i<5;i++){const y=pad.t+i*(H-pad.t-pad.b)/4;make('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,stroke:'rgba(42,33,24,.09)','stroke-width':1});}
+ const path=(vals,yf)=>vals.map((v,i)=>`${i?'L':'M'}${xs[i]},${yf(v)}`).join(' ');make('path',{d:path(hVals,hy),fill:'none',stroke:'#ff8fb3','stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round'});make('path',{d:path(wVals,wy),fill:'none',stroke:'#5aa7ff','stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round'});
+ rows.forEach((r,i)=>{make('circle',{cx:xs[i],cy:hy(hVals[i]),r:6,fill:'#ff8fb3'});make('circle',{cx:xs[i],cy:wy(wVals[i]),r:6,fill:'#5aa7ff'});const t=make('text',{x:xs[i],y:H-14,'text-anchor':'middle',class:'svgtext'});t.textContent=shortDate(r.date).slice(5);});
+}
+async function main(){const data=await(await fetch('./data.json?ts='+Date.now())).json();const rows=[...(data.measurements||[])].sort((a,b)=>String(a.date).localeCompare(String(b.date)));document.getElementById('childName').textContent=data.child?.displayName||'아이';const latest=rows.at(-1)||{};document.getElementById('latestDate').textContent=shortDate(latest.date);document.getElementById('latestHeight').textContent=fmt(latest.heightCm);document.getElementById('latestWeight').textContent=fmt(latest.weightKg);document.getElementById('count').textContent=rows.length+'회';document.getElementById('heightDelta').textContent=deltaText(rows,'heightCm','cm');document.getElementById('weightDelta').textContent=deltaText(rows,'weightKg','kg');drawChart(rows);
+ const tl=document.getElementById('timeline');rows.slice().reverse().forEach(r=>{const row=el('div','row');row.appendChild(el('strong','',shortDate(r.date)));const mid=el('div');mid.appendChild(el('span','pill',r.source||'입력'));mid.appendChild(el('div','note',r.note||''));row.appendChild(mid);row.appendChild(el('div','',`${fmt(r.heightCm)}cm · ${fmt(r.weightKg)}kg`));tl.appendChild(row);});if(!rows.length)addEmpty(tl,'아직 기록이 없습니다.');
+ const an=document.getElementById('analysisNotes');(data.analysisNotes||[]).slice().reverse().forEach(n=>addBox(an,n.title,n.content,n.date));if(!an.children.length)addEmpty(an,'AI 분석 메모 대기');const rp=document.getElementById('reports');(data.reports||[]).slice().reverse().forEach(r=>addBox(rp,r.title,r.summary,r.date));if(!rp.children.length)addEmpty(rp,'이전 성장 진단 자료를 보내주면 여기에 추가');}
+main().catch(err=>{const pre=document.createElement('pre');pre.style.padding='20px';pre.style.color='red';pre.textContent=String(err);document.body.prepend(pre);});
+</script>
+</body>
+</html>

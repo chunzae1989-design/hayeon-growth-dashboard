@@ -1,0 +1,23 @@
+{
+  "child": {
+    "displayName": "하연",
+    "privacyNote": "Public dashboard: first name only; no birthdate or private identifiers stored."
+  },
+  "measurements": [
+    {
+      "date": "2026-06-14",
+      "heightCm": 89.0,
+      "weightKg": 13.8,
+      "source": "Telegram",
+      "note": "초기 입력값"
+    }
+  ],
+  "reports": [],
+  "analysisNotes": [
+    {
+      "date": "2026-06-14",
+      "title": "초기 대시보드 설정",
+      "content": "키·몸무게 추이를 먼저 쌓고, 이후 이전 성장 진단 자료를 추가하면 변화 흐름과 진단 메모를 함께 비교합니다. 정확한 백분위/성장곡선 해석은 생년월일 또는 월령과 성별 기준표가 필요합니다."
+    }
+  ]
+}
