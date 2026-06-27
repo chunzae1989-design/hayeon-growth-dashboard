@@ -40,6 +40,411 @@
       }
     }
   ],
+  "developmentPlan": {
+    "basis": "영유아건강검진 검진시기와 K-DST 6개 발달 영역을 참고한 가정 관찰용 체크리스트입니다.",
+    "disclaimer": "공식 검진이나 전문 진단을 대체하지 않습니다.",
+    "domains": [
+      {
+        "id": "grossMotor",
+        "label": "대근육"
+      },
+      {
+        "id": "fineMotor",
+        "label": "소근육"
+      },
+      {
+        "id": "cognitive",
+        "label": "인지"
+      },
+      {
+        "id": "language",
+        "label": "언어"
+      },
+      {
+        "id": "social",
+        "label": "사회성"
+      },
+      {
+        "id": "selfHelp",
+        "label": "자조"
+      }
+    ],
+    "officialCheckups": [
+      {
+        "id": "checkup5",
+        "label": "5차 영유아건강검진",
+        "ageRange": "30~36개월"
+      },
+      {
+        "id": "checkup6",
+        "label": "6차 영유아건강검진",
+        "ageRange": "42~48개월"
+      },
+      {
+        "id": "checkup7",
+        "label": "7차 영유아건강검진",
+        "ageRange": "54~60개월"
+      },
+      {
+        "id": "checkup8",
+        "label": "8차 영유아건강검진",
+        "ageRange": "66~71개월"
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "m36_38",
+        "label": "36~38개월",
+        "ageStart": 36,
+        "ageEnd": 38.99,
+        "officialContext": "5차 검진 이후 관찰",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "계단, 달리기, 두 발 점프처럼 큰 움직임을 안정적으로 시도한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "선 긋기, 동그라미 흉내, 블록 맞추기처럼 손 조작 놀이가 늘어난다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "색, 모양, 크기를 비교하고 간단한 퍼즐이나 짝 맞추기를 해본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "여러 단어를 이어 말하고 오늘 한 일이나 원하는 것을 말로 표현한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "차례를 기다리거나 간단한 역할놀이에 참여한다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "손 씻기, 양치, 옷 입고 벗기의 일부를 스스로 하려 한다."
+          }
+        ]
+      },
+      {
+        "id": "m39_41",
+        "label": "39~41개월",
+        "ageStart": 39,
+        "ageEnd": 41.99,
+        "officialContext": "6차 검진 전 준비",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "한 발 균형, 낮은 장애물 넘기, 공 차기 같은 놀이를 시도한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "가위질 흉내, 끼우기, 붙이기 등 양손을 함께 쓰는 활동에 집중한다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "같다/다르다, 많다/적다처럼 기준을 잡아 물건을 나눠본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "두 단계 지시를 듣고 따라 하며 왜/어떻게 질문이 늘어난다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "친구와 같은 놀이 주제를 공유하고 감정을 말로 설명해본다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "화장실, 정리, 식사 같은 생활 루틴을 예측하고 참여한다."
+          }
+        ]
+      },
+      {
+        "id": "m42_44",
+        "label": "42~44개월",
+        "ageStart": 42,
+        "ageEnd": 44.99,
+        "officialContext": "6차 검진 구간",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "뛰다가 멈추기, 방향 바꾸기, 한 발 뛰기 같은 균형 놀이를 한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "동그라미나 십자 모양을 따라 그리고 간단한 오리기를 연습한다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "작은 수 세기, 분류, 간단한 순서 맞추기 놀이를 해본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "짧은 이야기를 듣고 주요 사건이나 순서를 말해본다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "간단한 규칙이 있는 놀이에서 순서와 역할을 받아들인다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "옷의 앞뒤, 신발, 겉옷처럼 스스로 준비하는 범위가 넓어진다."
+          }
+        ]
+      },
+      {
+        "id": "m45_47",
+        "label": "45~47개월",
+        "ageStart": 45,
+        "ageEnd": 47.99,
+        "officialContext": "6차 검진 구간",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "계단을 번갈아 오르내리거나 몸을 크게 쓰는 놀이를 오래 한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "간단한 모양을 보고 따라 그리며 색칠 영역을 의식한다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "원인과 결과를 묻고 놀이 속 문제를 다른 방법으로 해결해본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "문장을 이어 자신의 생각, 이유, 기억을 말한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "갈등 상황에서 도움을 요청하거나 양보, 기다리기를 연습한다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "식사 도구, 물 마시기, 손 닦기 같은 일을 더 독립적으로 한다."
+          }
+        ]
+      },
+      {
+        "id": "m48_50",
+        "label": "48~50개월",
+        "ageStart": 48,
+        "ageEnd": 50.99,
+        "officialContext": "6차 검진 이후 관찰",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "공 던지고 받기, 균형 잡기, 몸을 조절하는 놀이가 자연스러워진다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "연필 잡기, 선 따라가기, 붙이기와 조립 놀이의 정확도가 좋아진다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "시간 순서, 위치 말, 간단한 비교 개념을 놀이와 대화에 쓴다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "들은 이야기를 자기 말로 다시 설명하고 질문에 더 구체적으로 답한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "또래 놀이에서 규칙, 역할, 공동 목표를 조금씩 이해한다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "외출 준비나 정리처럼 여러 단계 생활 일을 함께 끝낸다."
+          }
+        ]
+      },
+      {
+        "id": "m51_53",
+        "label": "51~53개월",
+        "ageStart": 51,
+        "ageEnd": 53.99,
+        "officialContext": "7차 검진 전 준비",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "한 발로 서기, 뛰기, 균형 잡기 놀이를 더 오래 유지한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "간단한 그림 구성, 종이접기, 작은 조각 맞추기에 흥미를 보인다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "분류 기준을 바꾸거나 간단한 규칙을 기억해 놀이에 적용한다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "상황에 맞게 말투를 바꾸고 설명, 부탁, 거절을 문장으로 말한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "친구의 감정과 입장을 알아차리고 놀이를 조정해본다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "개인 물건 챙기기와 위생 습관을 스스로 떠올리기 시작한다."
+          }
+        ]
+      },
+      {
+        "id": "m54_56",
+        "label": "54~56개월",
+        "ageStart": 54,
+        "ageEnd": 56.99,
+        "officialContext": "7차 검진 구간",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "달리기, 멈추기, 던지기, 받기처럼 힘과 균형을 함께 조절한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "모양 따라 그리기, 선 안 색칠, 간단한 만들기의 완성도가 높아진다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "수, 양, 순서, 위치를 연결해 간단한 문제를 해결한다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "일어난 일의 이유와 결과를 이야기로 엮어 말한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "규칙 있는 놀이에서 이기고 지는 경험을 받아들이는 연습을 한다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "옷, 화장실, 식사, 정리 같은 일상 과제를 더 독립적으로 한다."
+          }
+        ]
+      },
+      {
+        "id": "m57_59",
+        "label": "57~59개월",
+        "ageStart": 57,
+        "ageEnd": 59.99,
+        "officialContext": "7차 검진 구간",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "몸을 빠르게 움직이는 놀이에서도 방향과 속도를 조절한다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "도구를 목적에 맞게 쓰고 작은 조각을 맞추는 활동을 즐긴다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "비슷한 것끼리 묶고 예외를 찾으며 간단한 추론을 해본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "대화 주제를 유지하고 상대 질문에 맞춰 설명을 이어간다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "공동 놀이에서 약속, 책임, 차례를 기억하려 한다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "새 환경에서도 기본 생활 습관을 스스로 해보려 한다."
+          }
+        ]
+      },
+      {
+        "id": "m60_62",
+        "label": "60~62개월",
+        "ageStart": 60,
+        "ageEnd": 62.99,
+        "officialContext": "7차 검진 이후 관찰",
+        "items": [
+          {
+            "id": "gross",
+            "domain": "grossMotor",
+            "text": "균형, 속도, 방향 전환이 필요한 놀이를 안전하게 즐긴다."
+          },
+          {
+            "id": "fine",
+            "domain": "fineMotor",
+            "text": "그리기, 자르기, 붙이기, 조립을 조합해 의도한 결과물을 만든다."
+          },
+          {
+            "id": "cognitive",
+            "domain": "cognitive",
+            "text": "규칙, 순서, 원인을 생각하며 놀이 계획을 세워본다."
+          },
+          {
+            "id": "language",
+            "domain": "language",
+            "text": "긴 설명을 듣고 핵심을 말하거나 자기 생각을 조리 있게 말한다."
+          },
+          {
+            "id": "social",
+            "domain": "social",
+            "text": "친구와 역할을 나누고 놀이 중 생긴 문제를 말로 풀어본다."
+          },
+          {
+            "id": "self",
+            "domain": "selfHelp",
+            "text": "등원, 외출, 정리처럼 여러 단계 준비를 스스로 점검한다."
+          }
+        ]
+      }
+    ]
+  },
   "reports": [],
   "analysisNotes": [
     {
