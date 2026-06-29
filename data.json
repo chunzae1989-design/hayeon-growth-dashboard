@@ -38,6 +38,40 @@
           "band": "90~97백분위"
         }
       }
+    },
+    {
+      "date": "2026-06-29",
+      "heightCm": 88.0,
+      "weightKg": 13.6,
+      "source": "Telegram",
+      "note": "Telegram 입력",
+      "ageMonths": 38.08,
+      "benchmarks": {
+        "source": "KDCA 2017 Growth Chart / Severance percentile guide",
+        "sourceUrl": "https://www.kdca.go.kr/kdca/5458/subview.do",
+        "method": "LMS interpolated by age in months",
+        "height": {
+          "value": 88.0,
+          "median": 96.53,
+          "z": -2.21,
+          "percentile": 1.4,
+          "band": "3백분위 미만"
+        },
+        "weight": {
+          "value": 13.6,
+          "median": 14.55,
+          "z": -0.66,
+          "percentile": 25.5,
+          "band": "25~75백분위"
+        },
+        "bmi": {
+          "value": 17.56,
+          "median": 15.75,
+          "z": 1.7,
+          "percentile": 95.5,
+          "band": "90~97백분위"
+        }
+      }
     }
   ],
   "developmentPlan": {
